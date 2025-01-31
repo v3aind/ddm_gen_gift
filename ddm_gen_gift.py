@@ -598,7 +598,7 @@ def process_files(file1, file2):
                             "MRID": [
                                 f"{po_id_from_file1}:MRPRE00",
                                 f"{po_id_from_file1}:MRACT00",
-                                f"{po_id_from_file1}:MR00000"
+                                f"{po_id_from_file1}:MR00000",
                                 f"{po_id_from_file1}:MRGFPRE00",
                                 f"{po_id_from_file1}:MRGFACT00",
                                 f"{po_id_from_file1}:MRGF00000"
