@@ -171,7 +171,7 @@ def process_files(file1, file2):
                                 f"{po_id_from_file1}:MRACT00",
                                 f"{po_id_from_file1}:MRACT00",
                                 f"{po_id_from_file1}:MR00000",
-                                f"{po_id_from_file1}:MR00000"
+                                f"{po_id_from_file1}:MR00000",
                                 f"{po_id_from_file1}:MRGFPRE00",
                                 f"{po_id_from_file1}:MRGFPRE00",
                                 f"{po_id_from_file1}:MRGFACT00",
