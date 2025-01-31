@@ -209,7 +209,7 @@ def process_files(file1, file2):
                             "DA_204": [""] * 12,
                             "UA_165": [""] * 12,
                             "ORDERTYPE": ["REGISTRATION"] * 12,
-                            "GIFT": ["FALSE","FALSE","","","FALSE","FALSE", "FALSE","FALSE","","","FALSE","FALSE"],
+                            "GIFT": ["FALSE","FALSE","","","FALSE","FALSE", "TRUE","TRUE","","","TRUE","TRUE"],
                             "RSC_CommercialName": [row["Commercial Name"]] * 12,
                             "ROAMING": [
                                 "",
