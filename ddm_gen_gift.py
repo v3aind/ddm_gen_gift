@@ -385,14 +385,7 @@ def process_files(file1, file2):
                                 f"{po_id_from_file1}:MRGFPRE00",
                                 f"{po_id_from_file1}:MRGFACT00",
                                 f"{po_id_from_file1}:MRGF00000"                            ],
-                            "Case_Type": [
-                                "REGISTRATION",
-                                "DORMANT",
-                                "UNREG",
-                                "REGISTRATION",
-                                "DORMANT",
-                                "UNREG"
-                            ]
+                            "Case_Type": ["REGISTRATION, UNREG"] *6
                         }
 
                         case_type_df = pd.DataFrame(case_type_data)
