@@ -184,8 +184,8 @@ def process_files(file1, file2):
                             "SALES_AREA": [""] * 12,
                             "ZONE": [""] * 12,
                             "ORIGIN": [
-                                f"{row['Channel-SS']},{row['Channel-Trad-NonTrad']}",
-                                f"{row['Channel-SS']},{row['Channel-Trad-NonTrad']}",
+                                f"{str(row['Channel-SS']).replace(' ', '')},{str(row['Channel-Trad-NonTrad']).replace(' ', '')}",
+                                f"{str(row['Channel-SS']).replace(' ', '')},{str(row['Channel-Trad-NonTrad']).replace(' ', '')}",
                                 "SDP",
                                 "SDP",
                                 f"{row['Channel-SS']},{row['Channel-Trad-NonTrad']}",
