@@ -216,16 +216,16 @@ def process_files(file1, file2):
                             "ROAMING": [
                                 "",
                                 "",
-                                f"IN|m{str(row['MCC']).strip() if row['MCC'] is not None else ''},"
-                                f"c{str(row['Country Code']).strip() if row['Country Code'] is not None else ''},"
+                                f"IN|m{str(row['MCC']).strip() if row['MCC'] is not None else ''},",
+                                f"c{str(row['Country Code']).strip() if row['Country Code'] is not None else ''},",
                                 f"{str(row['MCC_hex']).strip() if row['MCC_hex'] is not None else ''}",
                                 f"{str(row['MCC_hex']).strip() if row['MCC_hex'] is not None else ''}",
                                 "",
                                 "",
-                                f"IN|m{str(row['MCC']).strip() if row['MCC'] is not None else ''},"
-                                f"c{str(row['Country Code']).strip() if row['Country Code'] is not None else ''},"
+                                f"IN|m{str(row['MCC']).strip() if row['MCC'] is not None else ''},",
+                                f"c{str(row['Country Code']).strip() if row['Country Code'] is not None else ''},",
                                 f"{str(row['MCC_hex']).strip() if row['MCC_hex'] is not None else ''}",
-                                f"{str(row['MCC_hex']).strip() if row['MCC_hex'] is not None else ''}",
+                                f"{str(row['MCC_hex']).strip() if row['MCC_hex'] is not None else ''}"
                             ],
                             "ROAMINGFLAG": ["EQ|TRUE", "", "", "", "EQ|TRUE", "", "EQ|TRUE", "", "", "", "EQ|TRUE", ""],
                             "RSC_serviceKeyword": ["", "ActivateIntlRoaming", "", "", "", "ActivateIntlRoaming", "", "ActivateIntlRoaming", "", "", "", "ActivateIntlRoaming"],
