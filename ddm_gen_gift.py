@@ -151,16 +151,18 @@ def process_files(file1, file2):
                         ruleset_header_df.to_excel(writer, sheet_name="Ruleset-Header", index=False)
 
                         # Ensure MCC is treated as a string and split by commas
-                        mcc_raw = str(row['MCC'])  # Convert MCC to string
+                        mcc_raw = str(row['MCC']).replace(" ", "")  # Remove spaces before splitting
                         mcc_values = mcc_raw.split(',')  # Split by commas
-
-                        # Add 'm' prefix to each value and strip any surrounding whitespace
-                        mcc_prefixed = ','.join([f"m{mcc.strip()}" for mcc in mcc_values])
-
-                        # Split CC values, prefix each with 'c', and join them back with commas
-                        cc_raw = str(row['Country Code'])  # Convert CC to string
-                        cc_values = str(row['Country Code']).split(',')
-                        cc_prefixed = ','.join([f"c{cc.strip()}" for cc in cc_values])
+                        
+                        # Add 'm' prefix to each value
+                        mcc_prefixed = ','.join([f"m{mcc}" for mcc in mcc_values])
+                        
+                        # Process Country Code (CC) values
+                        cc_raw = str(row['Country Code']).replace(" ", "")  # Remove spaces before splitting
+                        cc_values = cc_raw.split(',')  # Split by commas
+                        
+                        # Add 'c' prefix to each CC value
+                        cc_prefixed = ','.join([f"c{cc}" for cc in cc_values])
 
                         # Create DDM-Rule
                         ddm_rule_data ={
@@ -214,16 +216,16 @@ def process_files(file1, file2):
                             "ROAMING": [
                                 "",
                                 "",
-                                f"IN|{mcc_prefixed},{cc_prefixed},{row['MCC_hex']}",
-                                f"IN|m{row['MCC']},c{row['Country Code']},{row['MCC_hex']}",
-                                f"IN|{row['MCC_hex']}",
-                                f"IN|{row['MCC_hex']}",
+                                f"IN|{mcc_prefixed.strip()},{cc_prefixed.strip()},{row['MCC_hex'].strip()}",
+                                f"IN|m{row['MCC'].strip()},c{row['Country Code'].strip()},{row['MCC_hex'].strip()}",
+                                f"IN|{row['MCC_hex'].strip()}",
+                                f"IN|{row['MCC_hex'].strip()}",
                                 "",
                                 "",
-                                f"IN|{mcc_prefixed},{cc_prefixed},{row['MCC_hex']}",
-                                f"IN|m{row['MCC']},c{row['Country Code']},{row['MCC_hex']}",
-                                f"IN|{row['MCC_hex']}",
-                                f"IN|{row['MCC_hex']}",                                
+                                f"IN|{mcc_prefixed.strip()},{cc_prefixed.strip()},{row['MCC_hex'].strip()}",
+                                f"IN|m{row['MCC'].strip()},c{row['Country Code'].strip()},{row['MCC_hex'].strip()}",
+                                f"IN|{row['MCC_hex'].strip()}",
+                                f"IN|{row['MCC_hex'].strip()}",
                             ],
                             "ROAMINGFLAG": ["EQ|TRUE", "", "", "", "EQ|TRUE", "", "EQ|TRUE", "", "", "", "EQ|TRUE", ""],
                             "RSC_serviceKeyword": ["", "ActivateIntlRoaming", "", "", "", "ActivateIntlRoaming", "", "ActivateIntlRoaming", "", "", "", "ActivateIntlRoaming"],
@@ -327,7 +329,8 @@ def process_files(file1, file2):
                                 "12200001178102", 
                                 "",
                                 "12200001178102" 
-                            ]
+                            ],
+                            "Resultant Shortname": [""] * 3 + [f"{po_id_from_file1}:MRPRE00"] + [""] * 4 + [f"{po_id_from_file1}:MRPRE00"] + [""]
                         }
 
                         rules_price_df = pd.DataFrame(rules_price_data)
