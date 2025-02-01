@@ -291,7 +291,6 @@ def process_files(file1, file2):
                                 f"{po_id_from_file1}:MRGFACT00",
                                 f"{po_id_from_file1}:MRGFACT00",
                                 f"{po_id_from_file1}:MRGF00000",
-
                             ],
                             "Variable Name": ["REGISTRATION"] * 3 + ["DORMANT"] + ["REGISTRATION"] * 4 + ["DORMANT"] + ["REGISTRATION"],
                             "Channel":[
